@@ -132,6 +132,12 @@ button {
   color: #111827;
 }
 
+.button-secondary.active {
+  background: #c7d2fe;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
 .spot-item,
 .diary-item,
 .setting-item {
