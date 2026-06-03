@@ -1,0 +1,184 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f7f8fc;
+  color: #1d1d27;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #eef1f7;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 1.5rem 1.25rem 0.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e8f0;
+}
+
+.app-header .eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  color: #6c7284;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+}
+
+.app-content {
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.screen {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+
+.card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  color: #545768;
+}
+
+.stat-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stat-card {
+  background: #f8fbff;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 0.9rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.button-primary,
+.button-secondary {
+  border: none;
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  cursor: pointer;
+}
+
+.button-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.button-secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.spot-item,
+.diary-item,
+.setting-item {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: #f8f9fc;
+}
+
+.spot-meta,
+.diary-meta,
+.setting-meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.tab-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  padding: 1rem 0.5rem;
+  font-size: 0.93rem;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .app-content {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
