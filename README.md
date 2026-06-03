@@ -202,6 +202,7 @@
 
 ***
 
+
 ### 4-4. 코디 추천 화면
 **역할:** 날씨 + 장소 무드 + 활동 강도를 결합한 추천 제공.  
 이 화면은 단순 옷 추천이 아니라, **TPO 기반 스타일링 의사결정**을 돕습니다.
@@ -306,6 +307,78 @@
 - 영어: “No trip log yet. Your visits and photos will build it automatically.”
 
 ***
+
+## GitHub Pages 배포 매뉴얼
+
+### 1) 설치 준비
+1. 터미널에서 프로젝트 루트로 이동합니다.
+2. `gh-pages` 도구를 개발 의존성으로 설치합니다.
+
+```bash
+npm install --save-dev gh-pages
+```
+
+### 2) Vite 프로젝트 설정
+- 이미 `vite.config.ts`에 `base: '/2026ktrip2/'`가 설정되어 있습니다.
+- 이 값은 GitHub Pages의 프로젝트 페이지 경로(`https://<사용자명>.github.io/2026ktrip2/`)에 맞춘 설정입니다.
+
+### 3) 빌드 및 배포
+1. 배포 빌드를 실행합니다.
+
+```bash
+npm run build
+```
+
+2. GitHub Pages로 배포합니다.
+
+```bash
+npm run deploy
+```
+
+### 4) GitHub 설정
+1. GitHub 리포지토리에서 `Settings`로 이동합니다.
+2. 왼쪽 메뉴에서 `Pages`를 선택합니다.
+3. 배포 소스(Source)를 `gh-pages branch` 또는 `GitHub Actions`로 설정할 수 있습니다.
+   - `gh-pages` 브랜치를 사용할 경우 `branch: gh-pages`와 `/` 경로를 선택합니다.
+4. `Save`를 누르면 배포 준비가 완료됩니다.
+
+### 5) 접속 방법
+- 배포가 완료되면 보통 아래 주소로 접속합니다.
+
+```text
+https://<GitHub 사용자명>.github.io/2026ktrip2/
+```
+
+- 예: `https://bigdatabad-mcbill.github.io/2026ktrip2/`
+
+### 6) 배포 확인
+- 빌드 후 `dist/` 폴더가 생성되었는지 확인합니다.
+- `npm run deploy` 실행 후 `gh-pages` 브랜치가 생성되었는지 GitHub 리포지토리에서 확인합니다.
+- 브라우저에서 위의 URL을 입력하여 사이트가 정상적으로 로드되는지 확인합니다.
+
+### 7) 배포 후 수정
+1. 코드 변경 후 다시 배포하려면:
+
+```bash
+npm run build
+npm run deploy
+```
+
+2. `vite.config.ts`의 `base` 값은 프로젝트명(`2026ktrip2`)과 일치해야 합니다.
+
+---
+
+## 로컬에서 먼저 확인하기
+1. 개발 서버 실행:
+
+```bash
+npm run dev
+```
+
+2. 브라우저에서 `http://localhost:5173`으로 접속합니다.
+
+3. 실제 배포 전에 로컬에서 동작을 먼저 확인합니다.
+
 
 ### 4-8. 설정 화면
 **역할:** 언어, 권한, 단위, 개인정보, 알림 관리.
